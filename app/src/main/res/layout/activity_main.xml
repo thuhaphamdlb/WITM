@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E9F8F9"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:textColor="#000"
+        android:text="        Bạn Muốn?"
+        android:textSize="35sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:textColor="#000"
+        android:text="  ♥ Chi tiêu hợp lý?"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:textColor="#000"
+        android:text="  ♥ Theo dõi chi phí của mình?"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:textColor="#000"
+        android:text="  ♥ Tiết kiệm tiền?"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35sp"
+        android:textColor="#000"
+        android:text="  ♥ Nửa tháng sau không bị đói?"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:textColor="#000"
+        android:text="  ♥ Và nhiều thứ nữa?"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="110sp"
+        android:textColor="#000"
+        android:text="  WITM - WHERE IS THE MONEY!"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's ask!"
+        android:background="#09CBD8"
+        android:textColor="#000"
+        android:textSize="20sp" />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
