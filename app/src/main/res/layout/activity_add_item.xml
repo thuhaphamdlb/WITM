@@ -7,6 +7,17 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".AddItem">
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Quản Lí Chi Tiêu"
+        android:textSize="50sp"
+        android:textColor="#000"
+        android:layout_height="wrap_content"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,8 +25,5 @@
         android:textSize="35sp"
         android:textColor="#000"
         android:background="#09CBD8"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+
 </LinearLayout>
