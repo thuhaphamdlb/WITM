@@ -6,39 +6,51 @@
     android:layout_height="match_parent"
     android:background="#E9F8F9"
     android:orientation="vertical"
-    tools:context=".AddItem">
+    tools:context=".Add">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Quản Lí Chi Tiêu"
-        android:textColor="#000"
-        android:textSize="35sp" />
+        android:text="Thêm Mục Bạn Vừa Mua"
+        android:textColor="#f000"
+        android:textSize="30sp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WITM là nơi để bạn có thể quản lý chi tiêu của mình một các hợp lý. \nChúng tôi sẽ giúp bạn điều chỉnh chi tiêu của mình để có thể tiết kiệm được ngân sách. \nChi tiêu của bạn:"
-        android:textColor="#793939"
+        android:text="Nhập Tên:"
+        android:textColor="#f000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên sản phẩm"
+        android:textColor="#f000"
         android:textSize="18sp" />
+
     <TextView
-        android:id="@+id/itemName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:layout_height="wrap_content"
+        android:text="Nhập Giá:"
+        android:textColor="#f000"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/price"
         android:layout_width="match_parent"
-        android:layout_height="200sp" />
+        android:layout_height="wrap_content"
+        android:hint="Giá sản phẩm"
+        android:textColor="#f000"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#09CBD8"
-        android:text="Thêm mục!"
+        android:text="Thêm"
         android:textColor="#000"
         android:textSize="20sp" />
-
-
 </LinearLayout>

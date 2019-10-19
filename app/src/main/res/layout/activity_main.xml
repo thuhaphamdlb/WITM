@@ -4,65 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#E9F8F9"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60sp"
+        android:gravity="center"
+        android:text="Bạn Muốn?"
         android:textColor="#000"
-        android:text="        Bạn Muốn?"
         android:textSize="35sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="35sp"
-        android:textColor="#000"
         android:text="  ♥ Chi tiêu hợp lý?"
+        android:textColor="#000"
         android:textSize="18sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="35sp"
-        android:textColor="#000"
         android:text="  ♥ Theo dõi chi phí của mình?"
+        android:textColor="#000"
         android:textSize="18sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="35sp"
-        android:textColor="#000"
         android:text="  ♥ Tiết kiệm tiền?"
+        android:textColor="#000"
         android:textSize="18sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="35sp"
-        android:textColor="#000"
         android:text="  ♥ Nửa tháng sau không bị đói?"
+        android:textColor="#000"
         android:textSize="18sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:textColor="#000"
         android:text="  ♥ Và nhiều thứ nữa?"
+        android:textColor="#000"
         android:textSize="18sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="110sp"
+        android:gravity="center"
+        android:text="WITM - WHERE IS THE MONEY!"
         android:textColor="#000"
-        android:text="  WITM - WHERE IS THE MONEY!"
         android:textSize="20sp" />
+
     <Button
         android:id="@+id/btnStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Let's ask!"
         android:background="#09CBD8"
+        android:text="Let's ask!"
         android:textColor="#000"
         android:textSize="20sp" />
+
     <ProgressBar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>
