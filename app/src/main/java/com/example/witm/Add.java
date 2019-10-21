@@ -3,40 +3,69 @@ package com.example.witm;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class Add extends AppCompatActivity {
     AppDatabase db;
-    ItemAdapter itemAdapter;
+    EditText edtItemName;
+    EditText edtItemPrice;
+    Button btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+
         db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-item").build();
+                AppDatabase.class, "database-name").build();
+        edtItemName = findViewById(R.id.name);
+        edtItemPrice = findViewById(R.id.price);
+        btnAdd = findViewById(R.id.btnAdd);
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addNewItemToDatabase();
+                finish();
+            }
+        });
     }
 
-    public void addNewItem(View view) {
-        TextView tvName = findViewById(R.id.name);
-        TextView tvPrice = findViewById(R.id.price);
-        final String itemName = tvName.getText().toString();
-        final String itemPrice = tvPrice.getText().toString();
+    @SuppressLint("StaticFieldLeak")
+    private void addNewItemToDatabase() {
+        final String itemName = edtItemName.getText().toString();
+        final String itemPrice = edtItemPrice.getText().toString();
+        if (itemName.isEmpty() || itemPrice.isEmpty()) {
+            Toast.makeText(this, "Input your data", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         new AsyncTask<Void, Void, Void>() {
-
             @Override
             protected Void doInBackground(Void... voids) {
-                Item user = new Item(itemName, itemPrice);
-                db.itemDao().insertAll(user);
+                Item newItem = new Item(itemName, itemPrice);
+                db.itemDao().insert(newItem);
                 return null;
             }
-        }.execute();
 
-        Toast.makeText(getApplicationContext(), "Add item successfully", Toast.LENGTH_SHORT).show();
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                Toast.makeText(Add.this, "New item added", Toast.LENGTH_SHORT).show();
+            }
+        }.execute();
     }
 }
+
+
+
+

@@ -10,6 +10,30 @@ public class Item {
     @PrimaryKey(autoGenerate = true)
     public int Tid;
 
+    public int getTid() {
+        return Tid;
+    }
+
+    public void setTid(int tid) {
+        Tid = tid;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public String getItemPrice() {
+        return itemPrice;
+    }
+
+    public void setItemPrice(String itemPrice) {
+        this.itemPrice = itemPrice;
+    }
+
     @ColumnInfo(name = "itemName")
     public String itemName;
 

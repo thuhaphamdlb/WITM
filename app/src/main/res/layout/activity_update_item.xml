@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E9F8F9"
+    tools:context=".UpdateItemActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập Tên:"
+        android:textColor="#f000"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edtUpdateItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên sản phẩm"
+        android:textColor="#f000"
+        android:textSize="18sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập Giá:"
+        android:textColor="#f000"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/edtUpdateItemPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Giá sản phẩm"
+        android:textColor="#f000"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#09CBD8"
+        android:text="Cập nhật"
+        android:textColor="#000"
+        android:textSize="20sp" />
+</LinearLayout>

@@ -22,10 +22,12 @@
         android:text="WITM là nơi để bạn có thể quản lý chi tiêu của mình một các hợp lý. \nChúng tôi sẽ giúp bạn điều chỉnh chi tiêu của mình để có thể tiết kiệm được ngân sách. \nChi tiêu của bạn:"
         android:textColor="#793939"
         android:textSize="18sp" />
+
     <TextView
         android:id="@+id/itemName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -39,6 +41,5 @@
         android:text="Thêm mục!"
         android:textColor="#000"
         android:textSize="20sp" />
-
-
+    
 </LinearLayout>

@@ -6,6 +6,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 @Dao
 public interface ItemDao {
@@ -13,22 +14,16 @@ public interface ItemDao {
     @Query("SELECT * FROM Item")
     List<Item> getAll();
 
-    @Query("SELECT * FROM Item WHERE Tid IN (:userIds)")
-    List<Item> loadAllByIds(int[] userIds);
-
-    @Query("SELECT * FROM Item WHERE itemName LIKE :first AND " +
-            "itemPrice LIKE :last LIMIT 1")
-    Item findByName(String first, String last);
-
     @Insert
     void insertAll(Item... items);
 
+    @Insert
+    void insert(Item items);
     @Delete
-    void delete(Item item);
+    void delete(Item items);
 
-    @Query("UPDATE Item SET itemName = :first_name WHERE Tid = :tid")
-    void updateUser(int tid, String first_name);
-
+    @Update
+    void update(Item items);
     @Query("DELETE FROM Item")
     void deleteAll();
 
