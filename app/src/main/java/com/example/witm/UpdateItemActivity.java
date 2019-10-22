@@ -3,7 +3,6 @@ package com.example.witm;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-import androidx.room.Update;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -12,7 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.example.witm.Database.AppDatabase;
+import com.example.witm.Database.Item;
 
 public class UpdateItemActivity extends AppCompatActivity {
     AppDatabase db;

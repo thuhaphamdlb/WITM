@@ -1,4 +1,4 @@
-package com.example.witm;
+package com.example.witm.Database;
 
 import java.util.List;
 
@@ -24,7 +24,9 @@ public interface ItemDao {
 
     @Update
     void update(Item items);
+
     @Query("DELETE FROM Item")
     void deleteAll();
+
 
 }

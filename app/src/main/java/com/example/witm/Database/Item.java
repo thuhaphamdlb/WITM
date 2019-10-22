@@ -1,4 +1,4 @@
-package com.example.witm;
+package com.example.witm.Database;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

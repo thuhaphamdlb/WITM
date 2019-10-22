@@ -6,12 +6,13 @@ import androidx.room.Room;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.witm.Database.AppDatabase;
+import com.example.witm.Database.Item;
 
 
 public class Add extends AppCompatActivity {

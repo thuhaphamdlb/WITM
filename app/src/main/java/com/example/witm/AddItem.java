@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,7 +15,9 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.widget.Button;
 
-import java.util.ArrayList;
+import com.example.witm.Database.AppDatabase;
+import com.example.witm.Database.Item;
+
 import java.util.List;
 
 public class AddItem extends AppCompatActivity {
@@ -43,7 +44,7 @@ public class AddItem extends AppCompatActivity {
 
             @Override
             public void onUpdateClick(int position) {
-                openUpdateTodoScreen(adapter.items.get(position));
+                openUpdateItemScreen(adapter.items.get(position));
             }
 
             @Override
@@ -89,7 +90,7 @@ public class AddItem extends AppCompatActivity {
         startActivity(new Intent(AddItem.this, Add.class));
     }
 
-    private void openUpdateTodoScreen(Item item){
+    private void openUpdateItemScreen(Item item){
         Intent intent = new Intent(AddItem.this, UpdateItemActivity.class);
         intent.putExtra("id", item.getTid());
         intent.putExtra("itemName", item.getItemName());
