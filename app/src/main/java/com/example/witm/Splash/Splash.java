@@ -1,10 +1,13 @@
-package com.example.witm;
+package com.example.witm.Splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.witm.Screen.MainActivity;
+import com.example.witm.R;
 
 public class Splash extends AppCompatActivity {
 
@@ -19,6 +22,6 @@ public class Splash extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        },3000);
+        },2000);
     }
 }

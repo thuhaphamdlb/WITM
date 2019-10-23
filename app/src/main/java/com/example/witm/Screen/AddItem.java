@@ -1,4 +1,4 @@
-package com.example.witm;
+package com.example.witm.Screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,7 @@ import android.widget.Button;
 
 import com.example.witm.Database.AppDatabase;
 import com.example.witm.Database.Item;
+import com.example.witm.R;
 
 import java.util.List;
 
@@ -40,12 +41,7 @@ public class AddItem extends AppCompatActivity {
         rvItem.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new ItemAdapter();
-        adapter.listener = new ItemAdapter.OnItemClickListener(){
-//
-//            @Override
-//            public void onUpdateClick(int position) {
-//                openUpdateItemScreen(adapter.items.get(position));
-//            }
+        adapter.listener = new ItemAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 getOneItem(position);
@@ -61,9 +57,10 @@ public class AddItem extends AppCompatActivity {
         });
     }
 
-    void getOneItem(int position){
+    void getOneItem(int position) {
         Item item = adapter.items.get(position);
         Intent intent = new Intent(AddItem.this, ItemInfoActivity.class);
+        intent.putExtra("id", item.getTid());
         intent.putExtra("name", item.getItemName());
         intent.putExtra("price", item.getItemPrice());
         startActivity(intent);
@@ -88,6 +85,7 @@ public class AddItem extends AppCompatActivity {
             protected void onPostExecute(List<Item> items) {
                 super.onPostExecute(items);
                 adapter.items = items;
+                adapter.notifyDataSetChanged();
             }
         }.execute();
     }
@@ -96,11 +94,4 @@ public class AddItem extends AppCompatActivity {
         startActivity(new Intent(AddItem.this, Add.class));
     }
 
-    private void openUpdateItemScreen(Item item){
-        Intent intent = new Intent(AddItem.this, ItemInfoActivity.class);
-        intent.putExtra("id", item.getTid());
-        intent.putExtra("itemName", item.getItemName());
-        intent.putExtra("itemPrice", item.getItemPrice());
-        startActivity(intent);
-    }
 }

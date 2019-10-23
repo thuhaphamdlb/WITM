@@ -6,17 +6,18 @@
     android:layout_height="match_parent"
     android:background="#E9F8F9"
     android:orientation="vertical"
-    tools:context=".Add">
+    tools:context=".Screen.Add">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thêm Mục Bạn Vừa Mua"
+        android:text="Bạn Vừa Mua Gì? "
         android:textColor="#f000"
         android:textSize="30sp" />
 
     <TextView
         android:layout_width="match_parent"
+        android:layout_marginTop="14sp"
         android:layout_height="wrap_content"
         android:text="Nhập Tên:"
         android:textColor="#f000"
@@ -44,7 +45,9 @@
         android:hint="Giá sản phẩm"
         android:textColor="#f000"
         android:textSize="18sp" />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200sp"/>
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"

@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ItemInfoActivity"></activity>
         <activity
-            android:name=".Splash"
+            android:name=".Screen.ItemInfoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".Splash.Splash"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +24,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Add"
+            android:name=".Screen.Add"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".AddItem"
+            android:name=".Screen.AddItem"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Screen.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 

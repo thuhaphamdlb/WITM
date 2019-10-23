@@ -6,7 +6,13 @@
     android:layout_height="match_parent"
     android:background="#E9F8F3"
     android:orientation="vertical"
-    tools:context=".AddItem">
+    tools:context=".Screen.AddItem">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E9F8F3"
+        android:orientation="vertical" />
 
     <TextView
         android:layout_width="match_parent"
@@ -19,20 +25,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WITM là nơi để bạn có thể quản lý chi tiêu của mình một các hợp lý. \nChúng tôi sẽ giúp bạn điều chỉnh chi tiêu của mình để có thể tiết kiệm được ngân sách. \nChi tiêu của bạn:"
+        android:text="Bạn đã mua:"
         android:textColor="#793939"
-        android:textSize="18sp" />
+        android:textSize="22sp" />
 
-    <TextView
-        android:id="@+id/itemName"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="#E9F8F3"
+        android:orientation="vertical" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="200sp" />
+        android:layout_height="230sp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:text="Tổng chi phí của bạn là: "
+        android:textColor="#793939"
+        android:textSize="20sp" />
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
@@ -41,5 +54,4 @@
         android:text="Thêm mục!"
         android:textColor="#000"
         android:textSize="20sp" />
-    
 </LinearLayout>

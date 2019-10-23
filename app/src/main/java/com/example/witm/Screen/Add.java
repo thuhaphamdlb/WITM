@@ -1,4 +1,4 @@
-package com.example.witm;
+package com.example.witm.Screen;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.witm.Database.AppDatabase;
 import com.example.witm.Database.Item;
-
+import com.example.witm.R;
 
 public class Add extends AppCompatActivity {
     AppDatabase db;

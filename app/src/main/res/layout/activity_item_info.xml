@@ -3,46 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E9F8F9"
-    android:orientation="vertical"
-    android:padding="15dp">
-
-    <LinearLayout
+    android:orientation="vertical">
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E9F8F9"
-        android:orientation="vertical" />
+        android:text="Chi tiết"
+        android:textColor="#f000"
+        android:textSize="30sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvItemName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Item name"
-        android:textColor="#000"
-        android:textSize="30sp" />
+        android:layout_height="50sp"
+        android:hint="Tên sản phẩm"
+        android:textColor="#f000"
+        android:textSize="18sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvItemPrice"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:textColor="#000"
-        android:textSize="30sp" />
-
+        android:layout_height="50sp"
+        android:hint="Giá sản phẩm"
+        android:textColor="#f000"
+        android:textSize="18sp" />
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50sp"
         android:background="#09CBD8"
         android:text="Cập nhật"
         android:textColor="#000"
         android:textSize="20sp" />
-
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#09CBD8"
         android:text="Xóa"
+        android:textSize="20sp"
         android:textColor="#000" />
-
 </LinearLayout>

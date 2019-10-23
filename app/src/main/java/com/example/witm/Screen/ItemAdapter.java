@@ -1,20 +1,19 @@
-package com.example.witm;
+package com.example.witm.Screen;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.witm.Database.Item;
+import com.example.witm.R;
 
 import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
-
     List<Item> items;
     OnItemClickListener listener;
 
@@ -28,7 +27,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
         holder.showItem.setText(items.get(position).getItemName());
+        holder.showPrice.setText(items.get(position).getItemPrice());
         holder.showItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(position);
+            }
+        });
+        holder.showPrice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemClick(position);
@@ -46,41 +52,18 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        TextView showItem;
-//        TextView tvItemPrice;
-//        Button btnUpdate;
-//        Button btnDelete;
+        TextView showItem, showPrice;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
             showItem = itemView.findViewById(R.id.showItem);
-//            tvItemPrice = itemView.findViewById(R.id.price);
-//            btnUpdate = itemView.findViewById(R.id.btnAdd);
-//            btnDelete = itemView.findViewById(R.id.btnAdd);
-
-//            btnUpdate.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    listener.onUpdateClick(getAdapterPosition());
-//                }
-//            });
-//
-//            btnDelete.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    listener.onDeleteClick(getAdapterPosition());
-//                }
-//            });
+            showPrice = itemView.findViewById(R.id.showPrice);
         }
 
     }
 
     interface OnItemClickListener {
-//        void onUpdateClick(int position);
-
-//        void onDeleteClick(int position);
-
         void onItemClick(int position);
     }
 }
