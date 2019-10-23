@@ -21,14 +21,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_add_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
         return new ItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        holder.tvItemName.setText(items.get(position).getItemName());
-        holder.tvItemPrice.setText(items.get(position).getItemPrice());
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
+        holder.showItem.setText(items.get(position).getItemName());
+        holder.showItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onItemClick(position);
+            }
+        });
     }
 
     @Override
@@ -41,39 +46,41 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvItemName;
-        TextView tvItemPrice;
-        Button btnUpdate;
-        Button btnDelete;
+        TextView showItem;
+//        TextView tvItemPrice;
+//        Button btnUpdate;
+//        Button btnDelete;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvItemName = itemView.findViewById(R.id.name);
-            tvItemPrice = itemView.findViewById(R.id.price);
-            btnUpdate = itemView.findViewById(R.id.btnAdd);
-            btnDelete = itemView.findViewById(R.id.btnAdd);
+            showItem = itemView.findViewById(R.id.showItem);
+//            tvItemPrice = itemView.findViewById(R.id.price);
+//            btnUpdate = itemView.findViewById(R.id.btnAdd);
+//            btnDelete = itemView.findViewById(R.id.btnAdd);
 
-            btnUpdate.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    listener.onUpdateClick(getAdapterPosition());
-                }
-            });
-
-            btnDelete.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    listener.onDeleteClick(getAdapterPosition());
-                }
-            });
+//            btnUpdate.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    listener.onUpdateClick(getAdapterPosition());
+//                }
+//            });
+//
+//            btnDelete.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    listener.onDeleteClick(getAdapterPosition());
+//                }
+//            });
         }
 
     }
 
     interface OnItemClickListener {
-        void onUpdateClick(int position);
+//        void onUpdateClick(int position);
 
-        void onDeleteClick(int position);
+//        void onDeleteClick(int position);
+
+        void onItemClick(int position);
     }
 }

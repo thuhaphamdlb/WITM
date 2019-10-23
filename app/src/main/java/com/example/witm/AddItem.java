@@ -41,15 +41,14 @@ public class AddItem extends AppCompatActivity {
 
         adapter = new ItemAdapter();
         adapter.listener = new ItemAdapter.OnItemClickListener(){
-
+//
+//            @Override
+//            public void onUpdateClick(int position) {
+//                openUpdateItemScreen(adapter.items.get(position));
+//            }
             @Override
-            public void onUpdateClick(int position) {
-                openUpdateItemScreen(adapter.items.get(position));
-            }
-
-            @Override
-            public void onDeleteClick(int position) {
-
+            public void onItemClick(int position) {
+                getOneItem(position);
             }
         };
         rvItem.setAdapter(adapter);
@@ -60,6 +59,14 @@ public class AddItem extends AppCompatActivity {
                 openAddItemScreen();
             }
         });
+    }
+
+    void getOneItem(int position){
+        Item item = adapter.items.get(position);
+        Intent intent = new Intent(AddItem.this, ItemInfoActivity.class);
+        intent.putExtra("name", item.getItemName());
+        intent.putExtra("price", item.getItemPrice());
+        startActivity(intent);
     }
 
     @Override
@@ -81,7 +88,6 @@ public class AddItem extends AppCompatActivity {
             protected void onPostExecute(List<Item> items) {
                 super.onPostExecute(items);
                 adapter.items = items;
-                adapter.notifyDataSetChanged();
             }
         }.execute();
     }
@@ -91,7 +97,7 @@ public class AddItem extends AppCompatActivity {
     }
 
     private void openUpdateItemScreen(Item item){
-        Intent intent = new Intent(AddItem.this, UpdateItemActivity.class);
+        Intent intent = new Intent(AddItem.this, ItemInfoActivity.class);
         intent.putExtra("id", item.getTid());
         intent.putExtra("itemName", item.getItemName());
         intent.putExtra("itemPrice", item.getItemPrice());
